@@ -1,7 +1,9 @@
+import React from 'react'
+
 const Nav = () => {
-    return ( 
-    <div className="nav">Nav</div>
-     );
+  return (
+    <Image sx={} src="./public/assets/shared/logo.svg" />
+  )
 }
- 
-export default Nav;
+
+export default Nav

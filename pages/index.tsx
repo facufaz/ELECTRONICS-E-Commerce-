@@ -1,13 +1,14 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Nav from '../components/nav'
+import Nav from '../components/Nav'
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <Image src={}/>
+    <div style={{
+      backgroundImage:"url(./assets/home/desktop/image-hero.jpg)",
+      height:"100vh",
+      backgroundSize:"100%",
+      }}>
      <Nav/>
     </div>
   )
