@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
-import Image from 'next/image'
-import Nav from '../components/Nav'
+
+import {Nav} from '../components/Nav'
 import Hero from '../components/Hero'
 import { Container } from '@mui/material'
 
