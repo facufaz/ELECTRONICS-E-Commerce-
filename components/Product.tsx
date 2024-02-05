@@ -4,18 +4,18 @@ import { Box, Container, Typography } from '@mui/material'
 import Image from 'next/image'
 import {Button} from './Button'
 import ProductCounter from './ProductCounter'
+import { useAppSelector } from '../store/hooks'
 
 interface Props {
   product: any;
 }
 
 const Product = ({ product }: Props) => {
-
-  console.log(product)
+  const { cart } = useAppSelector((state: { cart: any }) => state.cart)
 
   return (
     <Container sx={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-        <Image  src="/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg" width={500} height={500} alt="Headphones" />
+        <Image  src={product.image.desktop.replace(".", "")} width={500} height={500} alt="Headphones" />
       
         <Box sx={{display:"flex", flexDirection:"column", height:"75vh", justifyContent:"center", width:"25vw", marginLeft:"8rem"}}>
           <Typography 
