@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 import {Button} from './Button'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
@@ -26,7 +27,9 @@ const Hero = () => {
           }}>XX99 Mark II Headphones
         </Typography>
         <Typography variant='body1' sx={{letterSpacing:1, color:"#727272", fontSize:"1.25rem", marginBottom:"3rem", fontWeight:"800"}} >Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</Typography>
-        <Button color="#e47c52" variant="contained">See Product</Button>
+        <Button color="#e47c52" variant="contained" sx={undefined} >
+            <Link href="/3">See Product</Link>
+          </Button>
     </Box>
    
   )

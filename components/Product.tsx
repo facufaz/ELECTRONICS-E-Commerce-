@@ -1,10 +1,18 @@
+/* eslint-disable react/no-children-prop */
 import React from 'react'
 import { Box, Container, Typography } from '@mui/material'
 import Image from 'next/image'
 import {Button} from './Button'
 import ProductCounter from './ProductCounter'
 
-const Product = () => {
+interface Props {
+  product: any;
+}
+
+const Product = ({ product }: Props) => {
+
+  console.log(product)
+
   return (
     <Container sx={{display:"flex", justifyContent:"center", alignItems:"center"}}>
         <Image  src="/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg" width={500} height={500} alt="Headphones" />
@@ -29,13 +37,17 @@ const Product = () => {
               fontWeight:500,
               fontSize:"4.5rem",
               marginBottom:"2rem",
-            }}>XX99 Mark II Headphones
+            }}>
+              {product.name}
           </Typography>
 
-          <Typography variant='body1' sx={{letterSpacing:1, color:"#afadaf", fontSize:"1.25rem", marginBottom:"3rem", fontWeight:"800"}} >Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</Typography>
+          <Typography variant='body1' sx={{letterSpacing:1, color:"#afadaf", fontSize:"1.25rem", marginBottom:"3rem", fontWeight:"800"}} >
+            {product.description}
+            </Typography>
+            <Typography variant='h5'>{product.price}</Typography>
           <Box sx={{display:"flex", gap:4}}>
             <ProductCounter/>
-            <Button color="#e47c52" variant="contained">Add To Cart</Button> 
+            <Button color="#e47c52" variant="contained" sx={undefined} >Add To Cart</Button> 
           </Box>
 
     </Box>
