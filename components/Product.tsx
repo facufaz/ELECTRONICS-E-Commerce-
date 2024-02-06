@@ -4,7 +4,8 @@ import { Box, Container, Typography } from '@mui/material'
 import Image from 'next/image'
 import {Button} from './Button'
 import ProductCounter from './ProductCounter'
-import { useAppSelector } from '../store/hooks'
+import { useAppDispatch, useAppSelector } from '../store/hooks'
+import { addToCart } from '../store/cartSlice'
 
 interface Props {
   product: any;
@@ -12,7 +13,10 @@ interface Props {
 
 const Product = ({ product }: Props) => {
   const { cart } = useAppSelector((state: { cart: any }) => state.cart)
-
+  const dispatch = useAppDispatch()
+  
+  console.log(cart);
+  
   return (
     <Container sx={{display:"flex", justifyContent:"center", alignItems:"center"}}>
         <Image  src={product.image.desktop.replace(".", "")} width={500} height={500} alt="Headphones" />
@@ -44,10 +48,15 @@ const Product = ({ product }: Props) => {
           <Typography variant='body1' sx={{letterSpacing:1, color:"#afadaf", fontSize:"1.25rem", marginBottom:"3rem", fontWeight:"800"}} >
             {product.description}
             </Typography>
-            <Typography variant='h5'>{product.price}</Typography>
+            <Typography variant='h5'>${product.price}</Typography>
           <Box sx={{display:"flex", gap:4}}>
             <ProductCounter/>
-            <Button color="#e47c52" variant="contained" sx={undefined} >Add To Cart</Button> 
+            <Button color="#e47c52" variant="contained" onClick={() => dispatch(addToCart({
+              id: product.id,
+              name: product.name,
+              price:product.price
+              }))}>
+                Add To Cart</Button> 
           </Box>
 
     </Box>

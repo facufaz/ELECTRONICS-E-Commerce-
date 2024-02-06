@@ -3,16 +3,16 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from './store'
 
 // Define a type for the slice state
-interface CartState {
+interface cartState {
   cart: [{id: number }]
 }
 
 // Define the initial state using that type
-const initialState: CartState = {
+const initialState: cartState = {
   cart: [{id: 0 }],
 }
 
-export const CartSlice = createSlice({
+export const cartSlice = createSlice({
   name: 'cart',
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
@@ -24,9 +24,9 @@ export const CartSlice = createSlice({
   },
 )
 
-export const { addToCart } = CartSlice.actions
+export const { addToCart } = cartSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectCart = (state: RootState) => state.cart.cart
 
-export default CartSlice.reducer
+export default cartSlice.reducer

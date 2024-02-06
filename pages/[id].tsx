@@ -17,6 +17,7 @@ const ProductDetails = () => {
     fetch("/api/data")
       .then((res) => res.json())
       .then((response) => {
+        setData(response);
         setLoading(false);
         response.map((item: any) => {
           if (item.id.toString() === id) {
