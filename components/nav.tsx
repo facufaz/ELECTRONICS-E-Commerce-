@@ -9,12 +9,14 @@ export const Nav = () => {
   return (
   <div style={{ padding:"2rem 0", backgroundColor:"#191919"}} > 
     <Container sx={{display:'flex', justifyContent:"space-between", alignItems:"center"}}>
+    <Link href="/">
       <Image
       src="../assets/shared/logo.svg" 
       alt="Logo" 
       width={120}
       height={25}
       />
+    </Link>
 
       <ul style={{ color:"white", textTransform:'uppercase', textDecoration:"none", padding:"0"}}>
           <Link style={{marginRight:"2rem", fontWeight:700}} href="/" >Home</Link>
