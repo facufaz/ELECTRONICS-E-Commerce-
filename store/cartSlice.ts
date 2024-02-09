@@ -4,12 +4,12 @@ import { RootState } from './store'
 
 // Define a type for the slice state
 interface cartState {
-  cart: [{id: number }]
+  cart: [{id: number, name: string, price:number, image: string, itemCount: number }]
 }
 
 // Define the initial state using that type
 const initialState: cartState = {
-  cart: [{id: 0 }],
+  cart: [{id: 0, name:'', price: 0, image:'', itemCount: 0  }],
 }
 
 export const cartSlice = createSlice({
@@ -18,13 +18,16 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action:PayloadAction<any>) => {
-        state.cart = action.payload;
-    },
+        state.cart.push(action.payload);
+      },
+    startNewCart: (state) => {
+      state.cart.shift()
+    }
     },
   },
 )
 
-export const { addToCart } = cartSlice.actions
+export const { addToCart, startNewCart } = cartSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectCart = (state: RootState) => state.cart.cart

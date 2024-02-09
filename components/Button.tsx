@@ -1,19 +1,32 @@
 import React, { ReactElement, ReactNode } from 'react'
 import MuiButton from '@mui/material/Button';
+import { SxProps, Theme } from '@mui/material';
 
 interface Props {
-    sx?:any;
-    children?: ReactNode | string;
-    color: string;
-    variant: "text" | "outlined" | "contained";
-    onClick?: () => void;
+  color: string;
+  variant: "text" | "outlined" | "contained";
+  children: React.ReactNode;
+  sx?: SxProps<Theme>;
+  onClick?: () => void;
 }
 
-export const Button = ({ variant, color, children, sx, onClick }: Props) => {
+export const Button = ({ color, variant, children, sx, onClick }: Props) => {
   return (
-    <MuiButton variant={variant} onClick={() => {}} sx={{ background: color, width:"10rem", padding:"0.5rem 1rem", borderRadius:0, ...sx }}>
+    <MuiButton
+      onClick={onClick}
+      variant={variant}
+      sx={{
+        background: variant !== "outlined" ? color : null,
+        color: variant === "outlined" ? color : "auto",
+        border: variant === "outlined" ? `1px solid ${color}` : null,
+        width: "10rem",
+        padding: "1rem 2rem",
+        borderRadius: 0,
+        fontWeight: 800,
+        ...sx,
+      }}
+    >
       {children}
     </MuiButton>
-  )
-}
-
+  );
+};

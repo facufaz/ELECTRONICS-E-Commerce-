@@ -1,25 +1,24 @@
-/* eslint-disable react/no-children-prop */
-import React from 'react'
-import { Box, Container, Typography } from '@mui/material'
+import React, { useState } from 'react'
+import { Box, Container, Typography, Button as MuiButton } from '@mui/material'
 import Image from 'next/image'
 import {Button} from './Button'
-import ProductCounter from './ProductCounter'
 import { useAppDispatch, useAppSelector } from '../store/hooks'
-import { addToCart } from '../store/cartSlice'
+import { addToCart, startNewCart } from '../store/cartSlice'
 
 interface Props {
   product: any;
 }
 
 const Product = ({ product }: Props) => {
-  const { cart } = useAppSelector((state: { cart: any }) => state.cart)
+  const [count, setCount] = useState(0)
+  const { cart } = useAppSelector(state => state.cart)
   const dispatch = useAppDispatch()
-  
-  console.log(cart);
-  
+
+  console.log(cart)
+ 
   return (
     <Container sx={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-        <Image  src={product.image.desktop.replace(".", "")} width={500} height={500} alt="Headphones" />
+        <Image  src={product.image?.desktop.replace(".", "")} width={500} height={500} alt="Headphones" />
       
         <Box sx={{display:"flex", flexDirection:"column", height:"75vh", justifyContent:"center", width:"25vw", marginLeft:"8rem"}}>
           <Typography 
@@ -50,12 +49,29 @@ const Product = ({ product }: Props) => {
             </Typography>
             <Typography variant='h5'>${product.price}</Typography>
           <Box sx={{display:"flex", gap:4}}>
-            <ProductCounter/>
-            <Button color="#e47c52" variant="contained" onClick={() => dispatch(addToCart({
-              id: product.id,
-              name: product.name,
-              price:product.price
-              }))}>
+
+          <Box sx={{backgroundColor:"#afadaf", height:60 , display:'flex', alignItems:"center"  }}>
+            <MuiButton onClick={() => {count > 0 && setCount( count - 1)}}>-</MuiButton>
+                {count}
+            <MuiButton  onClick={() => setCount( count + 1)}>+</MuiButton>
+          </Box>
+
+            <Button
+            variant="contained"
+            color="#d97d45"
+            onClick={() => {
+              {
+                dispatch(startNewCart())
+                dispatch(addToCart({ 
+                  id: product.id,
+                  name: product.name,
+                  price: product.price,
+                  itemCount: count, 
+                  image: product.image.mobile.replace(".", "")
+                 }));
+              }
+            }}
+          >
                 Add To Cart</Button> 
           </Box>
 
