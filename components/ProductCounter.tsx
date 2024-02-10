@@ -1,13 +1,13 @@
-import { Box, Button } from '@mui/material'
+import { Box, Button as MuiButton } from '@mui/material'
 import React, { useState } from 'react'
 
 const ProductCounter = () => {
     const [count, setCount] = useState(0)
   return (
     <Box sx={{backgroundColor:"#afadaf", height:60 , display:'flex', alignItems:"center"  }}>
-        <Button onClick={() => {count > 0 && setCount( count - 1)}}>-</Button>
+        <MuiButton onClick={() => {count > 0 && setCount( count - 1)}}>-</MuiButton>
             {count}
-        <Button  onClick={() => setCount( count + 1)}>+</Button>
+        <MuiButton  onClick={() => setCount( count + 1)}>+</MuiButton>
     </Box>
   )
 }

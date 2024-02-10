@@ -22,13 +22,16 @@ const Cart = () => {
           
                 {cart.map((product) =>{
                   return(
-                    <Box key={product.id} sx={{display:"flex", margin:"1rem 0", gap:2 }}>
+                    <Box key={product.id} sx={{display:"flex", margin:"1rem 0", alignItems:"center", justifyContent:"space-between"}}>
                         <Image  src={product.image} width={50} height={50} alt="headphones"/>
-                        <Box sx={{display:"flex", flexDirection:"column", marginLeft:1}}>
+                        <Box sx={{display:"flex", flexDirection:"column"}}>
                           <Typography variant='body1'>{product.name}</Typography>
                           <Typography variant='body2' sx={{color:"#bab8ba"}}>${product.price}</Typography>
                         </Box>
-                          <Typography sx={{textTransform:'lowercase'}}>{product.itemCount}</Typography>
+                        <Box sx={{display:"flex", flexDirection:"column", alignContent:'flex-end'}}>
+                          <Typography sx={{fontSize:"0.75rem"}}>Count:</Typography>
+                          <Typography sx={{textTransform:'lowercase', display:"flex", justifyContent:"end", fontWeight:800}}>{product.itemCount}</Typography>
+                        </Box>
                     </Box>
                   )
                 })}

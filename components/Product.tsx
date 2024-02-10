@@ -11,10 +11,9 @@ interface Props {
 
 const Product = ({ product }: Props) => {
   const [count, setCount] = useState(0)
-  const { cart } = useAppSelector(state => state.cart)
+  // const { cart } = useAppSelector(state => state.cart)
   const dispatch = useAppDispatch()
 
-  console.log(cart)
  
   return (
     <Container sx={{display:"flex", justifyContent:"center", alignItems:"center"}}>
@@ -47,7 +46,7 @@ const Product = ({ product }: Props) => {
           <Typography variant='body1' sx={{letterSpacing:1, color:"#afadaf", fontSize:"1.25rem", marginBottom:"3rem", fontWeight:"800"}} >
             {product.description}
             </Typography>
-            <Typography variant='h5'>${product.price}</Typography>
+            <Typography variant='h5' sx={{ marginBottom:"2rem", fontWeight:700 }}>${product.price}</Typography>
           <Box sx={{display:"flex", gap:4}}>
 
           <Box sx={{backgroundColor:"#afadaf", height:60 , display:'flex', alignItems:"center"  }}>
@@ -67,7 +66,7 @@ const Product = ({ product }: Props) => {
                   name: product.name,
                   price: product.price,
                   itemCount: count, 
-                  image: product.image.mobile.replace(".", "")
+                  image: product.image.mobile.replace(".", ""),
                  }));
               }
             }}
