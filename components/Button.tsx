@@ -1,6 +1,6 @@
-import React, { ReactElement, ReactNode } from 'react'
-import MuiButton from '@mui/material/Button';
-import { SxProps, Theme } from '@mui/material';
+import React, { ReactElement, ReactNode } from "react";
+import MuiButton from "@mui/material/Button";
+import { SxProps, Theme } from "@mui/material";
 
 interface Props {
   color: string;
