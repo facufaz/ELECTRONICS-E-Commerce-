@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Container, Button } from "@mui/material";
+import { Container, Button, Typography } from "@mui/material";
 import Cart from "./Cart";
+import { useAppSelector } from "../store/hooks";
 
 export const Nav = () => {
   const [showCart, setShowCart] = useState(false);
+  const { cart } = useAppSelector((state) => state.cart);
+
   return (
     <div style={{ padding: "2rem 0", backgroundColor: "#191919" }}>
       <Container
@@ -53,9 +56,12 @@ export const Nav = () => {
             width={30}
             height={30}
           />
+          <Typography sx={{ marginLeft: "0.5rem", color: "white" }}>
+            ({cart.length})
+          </Typography>
         </Button>
       </Container>
-      {showCart && <Cart />}
+      {showCart ? <Cart /> : null}
     </div>
   );
 };
