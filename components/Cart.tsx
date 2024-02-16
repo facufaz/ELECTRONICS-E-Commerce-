@@ -59,8 +59,19 @@ const Cart = () => {
                 height={50}
                 alt="headphones"
               />
-              <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <Typography variant="body1">{product.name}</Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "start",
+                }}
+              >
+                <Typography
+                  variant="body1"
+                  sx={{ maxWidth: 120, justifySelf: "start" }}
+                >
+                  {product.name}
+                </Typography>
                 <Typography variant="body2" sx={{ color: "#bab8ba" }}>
                   ${product.price}
                 </Typography>

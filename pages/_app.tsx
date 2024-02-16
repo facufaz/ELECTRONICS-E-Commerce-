@@ -13,9 +13,14 @@ import lightThemeOptions from "../styles/theme/lightThemeOptions";
 import "../styles/globals.css";
 import { Provider } from "react-redux";
 import { store } from "../store/store";
+// import { PersistGate } from "redux-persist/integration/react";
+// import { persistStore } from "redux-persist";
+
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }
+
+// let persistor = persistStore(store);
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -26,12 +31,14 @@ const MyApp: React.FunctionComponent<MyAppProps> = (props) => {
 
   return (
     <Provider store={store}>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={lightTheme}>
           <CssBaseline />
           <Component {...pageProps} />
         </ThemeProvider>
       </CacheProvider>
+      {/* </PersistGate> */}
     </Provider>
   );
 };
