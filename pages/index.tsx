@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Nav } from "../components/Nav";
+import { Nav } from "../components/nav";
 import Hero from "../components/Hero";
 import { Container } from "@mui/material";
 import CategoryCardContainer from "../components/CategoryCardContainer";
