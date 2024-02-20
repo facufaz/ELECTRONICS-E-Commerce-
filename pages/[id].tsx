@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Nav } from "../components/Nav";
+import { Nav } from "../components/nav";
 import { Box } from "@mui/system";
 import Product from "../components/Product";
 import { useRouter } from "next/router";

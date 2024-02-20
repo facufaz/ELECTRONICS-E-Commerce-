@@ -43,7 +43,10 @@ const Footer = () => {
             <Link style={{ marginRight: "2rem", fontWeight: 700 }} href="/">
               Home
             </Link>
-            <Link style={{ marginRight: "2rem", fontWeight: 700 }} href="/headphones">
+            <Link
+              style={{ marginRight: "2rem", fontWeight: 700 }}
+              href="/headphones"
+            >
               Headphones
             </Link>
             <Link style={{ marginRight: "2rem", fontWeight: 700 }} href="/">

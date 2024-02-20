@@ -11,6 +11,8 @@ const CategoryPageHeader = ({ category }: Props) => {
       sx={{
         backgroundColor: "#1a1a1a",
         minHeight: "5rem",
+        marginTop: "3px",
+        paddingTop: "1.3rem",
         display: "flex",
         alignContent: "center",
         justifyContent: "center",

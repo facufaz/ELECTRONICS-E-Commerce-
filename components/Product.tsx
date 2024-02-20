@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Container, Typography, Button as MuiButton } from "@mui/material";
 import Image from "next/image";
 import { Button } from "./Button";
-import { useAppDispatch } from "../store/hooks";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { addToCart } from "../store/cartSlice";
 
 interface Props {
@@ -11,6 +11,7 @@ interface Props {
 
 const Product = ({ product }: Props) => {
   const [count, setCount] = useState(0);
+  const { cart } = useAppSelector((state) => state.cart);
 
   const dispatch = useAppDispatch();
 
