@@ -3,6 +3,7 @@ import { Nav } from "../components/nav";
 import { Box } from "@mui/system";
 import Product from "../components/Product";
 import { useRouter } from "next/router";
+import ProductFeatures from "../components/Shared/ProductFeatures";
 
 const ProductDetails = () => {
   const router = useRouter();
@@ -10,7 +11,11 @@ const ProductDetails = () => {
 
   const [data, setData] = useState([{ id: "1" }]);
   const [isLoading, setLoading] = useState(true);
-  const [product, setProduct] = useState([{ id: "0" }]);
+  const [product, setProduct] = useState({
+    id: "0",
+    features: "",
+    includes: [{ quantity: 0, item: "" }],
+  });
 
   useEffect(() => {
     fetch("/api/data")
@@ -34,6 +39,10 @@ const ProductDetails = () => {
     <Box>
       <Nav />
       <Product product={product} />
+      <ProductFeatures
+        features={product.features}
+        includes={product.includes}
+      />
     </Box>
   );
 };

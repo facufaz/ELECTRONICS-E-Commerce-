@@ -38,13 +38,22 @@ export const Nav = () => {
           <Link style={{ marginRight: "2rem", fontWeight: 700 }} href="/">
             Home
           </Link>
-          <Link style={{ marginRight: "2rem", fontWeight: 700 }} href="/headphones">
+          <Link
+            style={{ marginRight: "2rem", fontWeight: 700 }}
+            href="/headphones"
+          >
             Headphones
           </Link>
-          <Link style={{ marginRight: "2rem", fontWeight: 700 }} href="/">
+          <Link
+            style={{ marginRight: "2rem", fontWeight: 700 }}
+            href="/speakers"
+          >
             Speakers
           </Link>
-          <Link style={{ marginRight: "2rem", fontWeight: 700 }} href="/">
+          <Link
+            style={{ marginRight: "2rem", fontWeight: 700 }}
+            href="/earphones"
+          >
             Earphones
           </Link>
         </ul>

@@ -7,8 +7,8 @@ import { NextPage } from "next";
 import CategoryPageHeader from "../components/CategoryPageHeader";
 import CategoryItemContainer from "../components/Shared/CategoryItemContainer";
 
-const Headphones: NextPage = () => {
-  const category = "headphones";
+const Earphones: NextPage = () => {
+  const category = "earphones";
 
   const [data, setData] = useState<any>([]);
   const [isLoading, setLoading] = useState(true);
@@ -47,4 +47,4 @@ const Headphones: NextPage = () => {
   );
 };
 
-export default Headphones;
+export default Earphones;
