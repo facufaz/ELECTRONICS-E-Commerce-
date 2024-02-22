@@ -4,6 +4,10 @@ import { Box } from "@mui/system";
 import Product from "../components/Product";
 import { useRouter } from "next/router";
 import ProductFeatures from "../components/Shared/ProductFeatures";
+import CategoryCardContainer from "../components/CategoryCardContainer";
+import About from "../components/Shared/About";
+import Footer from "../components/Shared/Footer";
+import ProductGallery from "../components/Shared/ProductGallery";
 
 const ProductDetails = () => {
   const router = useRouter();
@@ -15,6 +19,11 @@ const ProductDetails = () => {
     id: "0",
     features: "",
     includes: [{ quantity: 0, item: "" }],
+    gallery: {
+      first: { desktop: "" },
+      second: { desktop: "" },
+      third: { desktop: "" },
+    },
   });
 
   useEffect(() => {
@@ -43,6 +52,10 @@ const ProductDetails = () => {
         features={product.features}
         includes={product.includes}
       />
+      <CategoryCardContainer />
+      <ProductGallery gallery={product.gallery} />
+      <About />
+      <Footer />
     </Box>
   );
 };

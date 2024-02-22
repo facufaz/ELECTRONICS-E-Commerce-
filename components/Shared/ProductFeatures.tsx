@@ -14,31 +14,60 @@ interface Props {
 const ProductFeatures = ({ includes, features }: Props) => {
   return (
     <Container>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", marginTop: "5rem" }}>
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
+            maxWidth: "60%",
           }}
         >
-          <Typography sx={{ textTransform: "uppercase" }}>Features</Typography>
-          <Typography>{features}</Typography>
+          <Typography
+            variant="h3"
+            sx={{
+              textTransform: "uppercase",
+              fontSize: "2rem",
+              fontWeight: 500,
+              marginBottom: "4rem",
+            }}
+          >
+            Features
+          </Typography>
+          <Typography variant="subtitle1">{features}</Typography>
         </Box>
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between",
+            justifyContent: "start",
+            marginLeft: "3rem",
           }}
         >
-          <Typography sx={{ textTransform: "uppercase" }}>
+          <Typography
+            variant="h3"
+            sx={{
+              textTransform: "uppercase",
+              fontSize: "2rem",
+              fontWeight: 500,
+              marginBottom: "4rem",
+            }}
+          >
             in the box
           </Typography>
           {includes.map((item: any) => {
             return (
-              <Typography key={item.item}>
-                {item.quantity}
+              <Typography variant="subtitle1" key={item.item}>
+                <span
+                  style={{
+                    color: "#d87d4a",
+                    marginRight: "0.5rem",
+                    fontWeight: 900,
+                    fontSize: "0.9rem",
+                  }}
+                >
+                  {item.quantity}x
+                </span>
                 {item.item}
               </Typography>
             );

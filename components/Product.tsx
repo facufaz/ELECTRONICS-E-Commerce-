@@ -4,6 +4,9 @@ import Image from "next/image";
 import { Button } from "./Button";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { addToCart } from "../store/cartSlice";
+import CategoryCardContainer from "./CategoryCardContainer";
+import Footer from "./Shared/Footer";
+import About from "./Shared/About";
 
 interface Props {
   product: any;
@@ -21,8 +24,8 @@ const Product = ({ product }: Props) => {
     >
       <Image
         src={product.image?.desktop.replace(".", "")}
-        width={500}
-        height={500}
+        width={600}
+        height={600}
         alt="Headphones"
       />
 

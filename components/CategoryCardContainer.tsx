@@ -4,7 +4,7 @@ import CategoryCard from "./CategoryCard";
 
 const CategoryCardContainer = () => {
   return (
-    <Box sx={{ margin: "4rem 0" }}>
+    <Box sx={{ margin: "10rem 0 1rem 0" }}>
       <Container sx={{ display: "flex", justifyContent: "space-between" }}>
         <CategoryCard category="headphones" />
         <CategoryCard category="speakers" />
