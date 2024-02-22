@@ -8,6 +8,7 @@ import CategoryCardContainer from "../components/CategoryCardContainer";
 import About from "../components/Shared/About";
 import Footer from "../components/Shared/Footer";
 import ProductGallery from "../components/Shared/ProductGallery";
+import Recommendations from "../components/Shared/Recommendations";
 
 const ProductDetails = () => {
   const router = useRouter();
@@ -19,6 +20,7 @@ const ProductDetails = () => {
     id: "0",
     features: "",
     includes: [{ quantity: 0, item: "" }],
+    others: [],
     gallery: {
       first: { desktop: "" },
       second: { desktop: "" },
@@ -54,6 +56,7 @@ const ProductDetails = () => {
       />
       <CategoryCardContainer />
       <ProductGallery gallery={product.gallery} />
+      <Recommendations recommendations={product.others} />
       <About />
       <Footer />
     </Box>
