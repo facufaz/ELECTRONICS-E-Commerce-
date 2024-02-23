@@ -12,7 +12,7 @@ interface CartItem {
 }
 // Define a type for the slice state
 interface CartState {
-  cart: CartItem[] | any[];
+  cart: CartItem[] | [];
 }
 
 const initialState: CartState = {

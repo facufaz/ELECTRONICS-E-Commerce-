@@ -107,7 +107,7 @@ const ProductDetails = () => {
       .then((response) => {
         setData(response);
         setLoading(false);
-        response.map((item: any) => {
+        response.map((item: APIProduct) => {
           if (item.slug === slug) {
             setProduct(item);
           }

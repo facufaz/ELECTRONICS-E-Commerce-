@@ -6,11 +6,12 @@ import { Nav } from "../components/nav";
 import { NextPage } from "next";
 import CategoryPageHeader from "../components/CategoryPageHeader";
 import CategoryItemContainer from "../components/Shared/CategoryItemContainer";
+import { APIProduct } from "../types";
 
 const Headphones: NextPage = () => {
   const category = "headphones";
 
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<APIProduct[]>([]);
   const [isLoading, setLoading] = useState(true);
   const product = Array.from(new Set(data));
 
@@ -19,7 +20,7 @@ const Headphones: NextPage = () => {
       .then((res) => res.json())
       .then((response) => {
         setLoading(false);
-        response.map((item: any) => {
+        response.map((item: APIProduct) => {
           if (item.category === category) {
             data.unshift(item);
           }
@@ -36,7 +37,7 @@ const Headphones: NextPage = () => {
       <Nav />
       <CategoryPageHeader category={category} />
 
-      {product.map((item: any) => {
+      {product.map((item: APIProduct) => {
         return <CategoryItemContainer item={item} key={item.id} />;
       })}
 

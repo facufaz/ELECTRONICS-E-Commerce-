@@ -55,7 +55,7 @@ const ProductFeatures = ({ includes, features }: Props) => {
           >
             in the box
           </Typography>
-          {includes?.map((item: any) => {
+          {includes?.map((item) => {
             return (
               <Typography variant="subtitle1" key={item.item}>
                 <span

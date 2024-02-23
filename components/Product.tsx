@@ -4,12 +4,10 @@ import Image from "next/image";
 import { Button } from "./Button";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { addToCart } from "../store/cartSlice";
-import CategoryCardContainer from "./CategoryCardContainer";
-import Footer from "./Shared/Footer";
-import About from "./Shared/About";
+import { APIProduct } from "../types";
 
 interface Props {
-  product: any;
+  product: APIProduct;
 }
 
 const Product = ({ product }: Props) => {

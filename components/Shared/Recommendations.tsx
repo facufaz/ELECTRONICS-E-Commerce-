@@ -6,7 +6,7 @@ import Link from "next/link";
 import { RecommendationsType } from "../../types";
 
 interface Props {
-  recommendations: any[] | undefined;
+  recommendations: RecommendationsType;
 }
 
 const Recommendations = ({ recommendations }: Props) => {
@@ -25,7 +25,7 @@ const Recommendations = ({ recommendations }: Props) => {
         you may also like
       </Typography>
       <Box sx={{ display: "flex", gap: "2rem", justifyContent: "center" }}>
-        {recommendations.map((product) => {
+        {recommendations?.map((product) => {
           return (
             <Box key={product.slug}>
               <Image
