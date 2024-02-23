@@ -7,8 +7,8 @@ interface Interface {
 }
 
 interface Props {
-  features: string;
-  includes: Interface[];
+  features: string | undefined;
+  includes: Interface[] | undefined;
 }
 
 const ProductFeatures = ({ includes, features }: Props) => {
@@ -55,7 +55,7 @@ const ProductFeatures = ({ includes, features }: Props) => {
           >
             in the box
           </Typography>
-          {includes.map((item: any) => {
+          {includes?.map((item: any) => {
             return (
               <Typography variant="subtitle1" key={item.item}>
                 <span

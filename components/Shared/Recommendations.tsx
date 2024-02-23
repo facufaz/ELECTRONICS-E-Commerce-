@@ -3,9 +3,10 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "../Button";
 import Link from "next/link";
+import { RecommendationsType } from "../../types";
 
 interface Props {
-  recommendations: any[];
+  recommendations: any[] | undefined;
 }
 
 const Recommendations = ({ recommendations }: Props) => {

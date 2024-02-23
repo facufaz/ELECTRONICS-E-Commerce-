@@ -9,6 +9,7 @@ import About from "../components/Shared/About";
 import Footer from "../components/Shared/Footer";
 import ProductGallery from "../components/Shared/ProductGallery";
 import Recommendations from "../components/Shared/Recommendations";
+import { APIProduct } from "../types";
 
 const ProductDetails = () => {
   const router = useRouter();
@@ -16,16 +17,88 @@ const ProductDetails = () => {
 
   const [data, setData] = useState([{ id: "1" }]);
   const [isLoading, setLoading] = useState(true);
-  const [product, setProduct] = useState({
-    id: "0",
-    features: "",
-    includes: [{ quantity: 0, item: "" }],
-    others: [],
-    gallery: {
-      first: { desktop: "" },
-      second: { desktop: "" },
-      third: { desktop: "" },
+  const [product, setProduct] = useState<APIProduct>({
+    id: 0,
+    slug: "",
+    name: "",
+    image: {
+      mobile: "",
+      tablet: "",
+      desktop: "",
     },
+    category: "",
+    new: true,
+    price: 0,
+    description: "",
+    features: "",
+    includes: [
+      {
+        quantity: 0,
+        item: "",
+      },
+      {
+        quantity: 0,
+        item: "",
+      },
+      {
+        quantity: 0,
+        item: "",
+      },
+      {
+        quantity: 0,
+        item: "",
+      },
+      {
+        quantity: 0,
+        item: "",
+      },
+    ],
+    gallery: {
+      first: {
+        mobile: "",
+        tablet: "",
+        desktop: "",
+      },
+      second: {
+        mobile: "",
+        tablet: "",
+        desktop: "",
+      },
+      third: {
+        mobile: "",
+        tablet: "",
+        desktop: "",
+      },
+    },
+    others: [
+      {
+        slug: "",
+        name: "",
+        image: {
+          mobile: "",
+          tablet: "",
+          desktop: "",
+        },
+      },
+      {
+        slug: "",
+        name: "",
+        image: {
+          mobile: "",
+          tablet: "",
+          desktop: "",
+        },
+      },
+      {
+        slug: "",
+        name: "",
+        image: {
+          mobile: "",
+          tablet: "",
+          desktop: "",
+        },
+      },
+    ],
   });
 
   useEffect(() => {

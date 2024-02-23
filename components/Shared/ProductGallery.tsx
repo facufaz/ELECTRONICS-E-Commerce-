@@ -3,11 +3,13 @@ import React from "react";
 import Image from "next/image";
 
 interface Props {
-  gallery: {
-    first: { desktop: string };
-    second: { desktop: string };
-    third: { desktop: string };
-  };
+  gallery:
+    | {
+        first: { desktop: string };
+        second: { desktop: string };
+        third: { desktop: string };
+      }
+    | undefined;
 }
 const ProductGallery = ({ gallery }: Props) => {
   return (
@@ -20,20 +22,20 @@ const ProductGallery = ({ gallery }: Props) => {
         }}
       >
         <Image
-          src={gallery.first.desktop.replace(".", "")}
+          src={gallery?.first.desktop.replace(".", "") || ""}
           alt="product image"
           width={445}
           height={280}
         />
         <Image
-          src={gallery.second.desktop.replace(".", "")}
+          src={gallery?.second.desktop.replace(".", "") || ""}
           alt="product image"
           width={445}
           height={280}
         />
       </Box>
       <Image
-        src={gallery.third.desktop.replace(".", "")}
+        src={gallery?.third.desktop.replace(".", "") || ""}
         alt="product image"
         width={635}
         height={592}
