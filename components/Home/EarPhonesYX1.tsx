@@ -37,7 +37,7 @@ const HeadphonesYX1 = () => {
         </Typography>
 
         <Button sx={{ minWidth: 162 }} variant="outlined" color="black">
-          <Link href="/1">see product</Link>
+          <Link href="/yx1-earphones">see product</Link>
         </Button>
       </Box>
     </Container>

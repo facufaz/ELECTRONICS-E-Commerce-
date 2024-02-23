@@ -30,7 +30,7 @@ const SpeakerZX7 = () => {
             ZX7 Speaker
           </Typography>
           <Button sx={{ minWidth: 162 }} variant="outlined" color="black">
-            <Link href="/5">see product</Link>
+            <Link href="/zx7-speaker">see product</Link>
           </Button>
         </Box>
       </Box>

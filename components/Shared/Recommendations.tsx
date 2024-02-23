@@ -2,6 +2,7 @@ import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import { Button } from "../Button";
+import Link from "next/link";
 
 interface Props {
   recommendations: any[];
@@ -51,7 +52,7 @@ const Recommendations = ({ recommendations }: Props) => {
                 }}
               >
                 <Button variant="contained" color="#d87d4a">
-                  See Product
+                  <Link href={`/${product.name}`}>See Product</Link>
                 </Button>
               </Box>
             </Box>

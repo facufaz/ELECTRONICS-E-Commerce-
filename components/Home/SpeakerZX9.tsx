@@ -53,7 +53,7 @@ const SpeakerZX9 = () => {
             truly remarkable sound
           </Typography>
           <Button variant="contained" color="black">
-            <Link href="/6">see product</Link>
+            <Link href="/zx9-speaker">see product</Link>
           </Button>
         </Box>
       </Box>
