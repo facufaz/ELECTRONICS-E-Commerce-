@@ -61,6 +61,5 @@ const Recommendations = ({ recommendations }: Props) => {
     </Container>
   );
 };
-console.log("2" + "2" - "2");
 
 export default Recommendations;
