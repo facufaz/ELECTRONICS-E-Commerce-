@@ -4,8 +4,21 @@ import CategoryCard from "./CategoryCard";
 
 const CategoryCardContainer = () => {
   return (
-    <Box sx={{ margin: "10rem 0 1rem 0" }}>
-      <Container sx={{ display: "flex", justifyContent: "space-between" }}>
+    <Box
+      sx={{
+        margin: "16rem 0 8rem 0",
+        display: "flex",
+        justifyContent: "space-between",
+      }}
+    >
+      <Container
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          maxWidth: 2400,
+        }}
+      >
         <CategoryCard category="headphones" />
         <CategoryCard category="speakers" />
         <CategoryCard category="earphones" />

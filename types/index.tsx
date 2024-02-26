@@ -83,6 +83,9 @@ export type APIProduct = {
 };
 
 export type RecommendationsType = {
+  map(
+    arg0: (product: any) => import("react").JSX.Element
+  ): import("react").ReactNode;
   others: [
     {
       slug: string;
