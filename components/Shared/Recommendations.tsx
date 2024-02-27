@@ -24,7 +24,9 @@ const Recommendations = ({ recommendations }: Props) => {
       >
         you may also like
       </Typography>
-      <Box sx={{ display: "flex", gap: "2rem", justifyContent: "center" }}>
+      <Box
+        sx={{ display: "flex", gap: "2rem", justifyContent: "space-between" }}
+      >
         {recommendations?.map((product) => {
           return (
             <Box key={product.slug}>
