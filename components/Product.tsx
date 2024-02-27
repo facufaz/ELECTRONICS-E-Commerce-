@@ -98,17 +98,15 @@ const Product = ({ product }: Props) => {
           </Box>
 
           <Button
+            sx={{ zIndex: 1 }}
             variant="contained"
             color="#d97d45"
             onClick={() => {
               {
                 dispatch(
                   addToCart({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    itemCount: count,
-                    image: product.image.mobile.replace(".", ""),
+                    ...product,
+                    count,
                   })
                 );
               }

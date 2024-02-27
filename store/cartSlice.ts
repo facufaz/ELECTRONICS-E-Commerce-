@@ -1,18 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
+import { ProductType } from "../types";
 
-interface CartItem {
-  id: number;
-  image: string;
-  name: string;
-  itemCount: number;
-  price: number;
-  cart: number;
-}
 // Define a type for the slice state
 interface CartState {
-  cart: CartItem[] | [];
+  cart: ProductType[] | any;
 }
 
 const initialState: CartState = {
@@ -24,7 +17,7 @@ export const cartSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    addToCart: (state, action: PayloadAction<any>) => {
+    addToCart: (state, action: PayloadAction<ProductType>) => {
       state.cart.push(action.payload);
     },
     clearCart: (state) => {

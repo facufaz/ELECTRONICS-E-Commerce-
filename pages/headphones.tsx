@@ -37,7 +37,7 @@ const Headphones: NextPage = () => {
       <Nav />
       <CategoryPageHeader category={category} />
 
-      {product.map((item: APIProduct) => {
+      {product.map((item) => {
         return <CategoryItemContainer item={item} key={item.id} />;
       })}
 

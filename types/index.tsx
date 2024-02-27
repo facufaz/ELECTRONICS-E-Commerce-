@@ -82,37 +82,16 @@ export type APIProduct = {
   ];
 };
 
+export interface ProductType extends APIProduct {
+  count: number;
+}
+
 export type RecommendationsType = {
-  map(
-    arg0: (product: any) => import("react").JSX.Element
-  ): import("react").ReactNode;
-  others: [
-    {
-      slug: string;
-      name: string;
-      image: {
-        mobile: string;
-        tablet: string;
-        desktop: string;
-      };
-    },
-    {
-      slug: string;
-      name: string;
-      image: {
-        mobile: string;
-        tablet: string;
-        desktop: string;
-      };
-    },
-    {
-      slug: string;
-      name: string;
-      image: {
-        mobile: string;
-        tablet: string;
-        desktop: string;
-      };
-    }
-  ];
+  slug: string;
+  name: string;
+  image: {
+    mobile: string;
+    tablet: string;
+    desktop: string;
+  };
 };

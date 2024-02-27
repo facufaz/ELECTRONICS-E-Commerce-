@@ -4,15 +4,18 @@ import { Button } from "./Button";
 import Image from "next/image";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { clearCart } from "../store/cartSlice";
+import { APIProduct, ProductType } from "../types";
 
 const Cart = () => {
-  const dispatch = useAppDispatch();
   const { cart } = useAppSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
 
+  console.log(cart);
   return (
     <Box
       sx={{
         position: "absolute",
+        zIndex: 2,
         top: 120,
         height: "100vh",
         width: "99.2vw",
@@ -41,8 +44,7 @@ const Cart = () => {
             Remove All
           </MuiButton>
         </Box>
-
-        {cart.map((product) => {
+        {cart.map((product: any) => {
           return (
             <Box
               key={product.id}
@@ -54,9 +56,9 @@ const Cart = () => {
               }}
             >
               <Image
-                src={product.image}
-                width={50}
-                height={50}
+                src={product.image.mobile.replace(".", "")}
+                width={65}
+                height={65}
                 alt="headphones"
               />
               <Box
@@ -92,13 +94,12 @@ const Cart = () => {
                     fontWeight: 800,
                   }}
                 >
-                  {product.itemCount}
+                  {product.count}
                 </Typography>
               </Box>
             </Box>
           );
         })}
-
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography>Total</Typography>
           <Typography>$$$</Typography>

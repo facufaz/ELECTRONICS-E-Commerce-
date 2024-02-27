@@ -6,7 +6,7 @@ import Link from "next/link";
 import { RecommendationsType } from "../../types";
 
 interface Props {
-  recommendations: RecommendationsType;
+  recommendations: RecommendationsType[];
 }
 
 const Recommendations = ({ recommendations }: Props) => {
