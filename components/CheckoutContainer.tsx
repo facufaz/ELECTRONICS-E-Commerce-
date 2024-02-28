@@ -22,23 +22,23 @@ const CheckoutContainer = () => {
             marginTop: "3rem",
             color: "#d87d4a",
             textTransform: "uppercase",
-            fontSize: "1.25rem",
+            fontSize: "1.3rem",
             fontWeight: 500,
           }}
         >
           Billing Details
         </Typography>
-        <Box sx={{ marginTop: "1rem" }}>
-          <Box>
+        <Box sx={{ marginTop: 1 }}>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <TextField
-              sx={{ margin: " 2rem 5px 5px 0" }}
+              sx={{ margin: " 1rem 5px 5px 0", width: "48%" }}
               id="name"
               label="Name"
               placeholder="Facundo Fazzito"
               variant="outlined"
             />
             <TextField
-              sx={{ margin: "2rem 5px 5px 1rem" }}
+              sx={{ margin: "1rem 5px 5px 1rem", width: "48%" }}
               id="email"
               label="Email"
               placeholder="facufazzito@gmail.com"
@@ -46,7 +46,7 @@ const CheckoutContainer = () => {
             />
           </Box>
           <TextField
-            sx={{ margin: " 2rem 5px 5px 0" }}
+            sx={{ margin: " 1rem 5px 5px 0", width: "48%" }}
             id="phone"
             label="Phone Number"
             placeholder="+1 202-555-275"
@@ -59,15 +59,15 @@ const CheckoutContainer = () => {
             marginTop: "3rem",
             color: "#d87d4a",
             textTransform: "uppercase",
-            fontSize: "1.25rem",
+            fontSize: "1.3rem",
             fontWeight: 500,
           }}
         >
           shipping info
         </Typography>
-        <Box sx={{ marginTop: "1rem" }}>
+        <Box sx={{ marginTop: 1 }}>
           <TextField
-            sx={{ margin: " 2rem 5px 5px 0", width: "100%" }}
+            sx={{ marginTop: "1rem", width: "100%" }}
             id="adress"
             label="Adress"
             placeholder="Corrientes 1910"
@@ -75,7 +75,7 @@ const CheckoutContainer = () => {
           />
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <TextField
-              sx={{ marginTop: " 2rem", width: "49%" }}
+              sx={{ marginTop: " 1rem", width: "48%" }}
               id="zip Code"
               label="Zip Code"
               placeholder="10916"
@@ -83,7 +83,7 @@ const CheckoutContainer = () => {
             />
 
             <TextField
-              sx={{ marginTop: " 2rem", width: "49%" }}
+              sx={{ marginTop: " 1rem", width: "48%" }}
               id="city"
               label="City"
               placeholder="Buenos Aires"
@@ -91,7 +91,7 @@ const CheckoutContainer = () => {
             />
           </Box>
           <TextField
-            sx={{ marginTop: " 2rem", width: "49%" }}
+            sx={{ marginTop: " 1rem", width: "48%" }}
             id="country"
             label="Country"
             placeholder="Argentina"
