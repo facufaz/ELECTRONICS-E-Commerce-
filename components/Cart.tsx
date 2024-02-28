@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { clearCart } from "../store/cartSlice";
 import { APIProduct, ProductType } from "../types";
+import Link from "next/link";
 
 const Cart = () => {
   const { cart } = useAppSelector((state) => state.cart);
@@ -109,7 +110,7 @@ const Cart = () => {
           color="#e47c52"
           variant="contained"
         >
-          Checkout
+          <Link href="/checkout">Checkout</Link>
         </Button>
       </Box>
     </Box>
