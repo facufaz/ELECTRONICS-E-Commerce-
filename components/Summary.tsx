@@ -27,7 +27,7 @@ const Summary = () => {
       </Typography>
       <Box>
         <Typography
-          sx={{ display: "flex", justifyContent: "center", paddingTop: "2rem" }}
+          sx={{ display: "flex", justifyContent: "center", paddingTop: "3rem" }}
         >
           No Items
         </Typography>
@@ -36,12 +36,14 @@ const Summary = () => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          paddingTop: "3rem",
+          paddingTop: "2rem",
         }}
       >
         <Typography
           sx={{
             textTransform: "uppercase",
+            color: "#808080",
+            fontWeight: 600,
           }}
         >
           Total
@@ -58,11 +60,13 @@ const Summary = () => {
         <Typography
           sx={{
             textTransform: "uppercase",
+            color: "#808080",
+            fontWeight: 600,
           }}
         >
           Shipping
         </Typography>
-        <Typography>$0.00</Typography>
+        <Typography>$19.95</Typography>
       </Box>
       <Box
         sx={{
@@ -74,6 +78,8 @@ const Summary = () => {
         <Typography
           sx={{
             textTransform: "uppercase",
+            color: "#808080",
+            fontWeight: 600,
           }}
         >
           tax
@@ -90,14 +96,22 @@ const Summary = () => {
         <Typography
           sx={{
             textTransform: "uppercase",
+            color: "black",
+            fontWeight: 600,
           }}
         >
           Grand Total
         </Typography>
-        <Typography>$0.00</Typography>
+        <Typography sx={{ color: "#e47c52" }}>$19.95</Typography>
       </Box>
 
-      <Button variant=""> continue and pay </Button>
+      <Button
+        variant="contained"
+        color="#e47c52"
+        sx={{ width: "100%", marginTop: "2rem" }}
+      >
+        continue and pay
+      </Button>
     </Box>
   );
 };

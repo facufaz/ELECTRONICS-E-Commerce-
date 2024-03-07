@@ -55,7 +55,7 @@ const Recommendations = ({ recommendations }: Props) => {
                 }}
               >
                 <Button variant="contained" color="#d87d4a">
-                  <Link href={`/${product.name}`}>See Product</Link>
+                  <Link href={`/${product.slug}`}>See Product</Link>
                 </Button>
               </Box>
             </Box>
