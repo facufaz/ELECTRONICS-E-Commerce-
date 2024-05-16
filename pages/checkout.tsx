@@ -10,7 +10,7 @@ const Checkout: NextPage = () => {
     <div style={{ backgroundColor: "#f1f1f1" }}>
       <Nav />
       <Container>
-        <Box sx={{ display: "flex", marginTop: "52rem" }}>
+        <Box sx={{ display: "flex", marginTop: "5rem" }}>
           <CheckoutContainer />
           <Summary />
         </Box>
