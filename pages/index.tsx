@@ -14,7 +14,7 @@ const Home: NextPage = () => {
     <div>
       <div
         style={{
-          color: "white",
+          color: "black",
           backgroundImage: "url(./assets/home/desktop/image-hero.jpg)",
           height: "100vh",
           backgroundSize: "100%",
