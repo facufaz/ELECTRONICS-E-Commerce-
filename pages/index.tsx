@@ -17,7 +17,7 @@ const Home: NextPage = () => {
           color: "white",
           backgroundImage: "url(./assets/home/desktop/image-hero.jpg)",
           height: "100vh",
-          backgroundSize: "10%",
+          backgroundSize: "100%",
         }}
       >
         <Container>
