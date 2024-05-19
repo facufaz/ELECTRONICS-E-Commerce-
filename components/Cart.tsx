@@ -59,7 +59,7 @@ const Cart = () => {
               <Image
                 src={product.image.mobile.replace(".", "")}
                 width={65}
-                height={65}
+                height={75}
                 alt="headphones"
               />
               <Box
